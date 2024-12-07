@@ -1,3 +1,11 @@
+using Centralis.Core.Interfaces;
+using Centralis.Core.Services;
+using Centralis.Data.Clients;
+using Centralis.Data.Interfaces;
+using Centralis.Data.Interfaces.Clients;
+using Centralis.Data.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Centralis.API
 {
     public class Program
@@ -6,16 +14,22 @@ namespace Centralis.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            var configuration = builder.Configuration;
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            string connString = configuration["ConnectionString"];
+
+            builder.Services.AddSingleton<IDbClient>(provider => new DbClient(connString));
+
+            builder.Services.AddSingleton<IPatientRepository, PatientRepository>();
+
+            builder.Services.AddSingleton<IPatientService, PatientService>();
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -23,9 +37,7 @@ namespace Centralis.API
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
 
             app.MapControllers();
 
