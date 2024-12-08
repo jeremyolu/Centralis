@@ -16,6 +16,19 @@ namespace Centralis.API.Controllers
             _patientService = patientService;
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(long id)
+        {
+            var response = await _patientService.GetPatient(id);
+
+            if (response == null)
+            {
+                return NotFound(new { message = $"Patient with ID {id} not found.", errorCode = 404 });
+            }
+
+            return Ok(response);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {

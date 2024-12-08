@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.API", "Centralis.API\Centralis.API.csproj", "{7A9294BB-2E52-4B2E-8A4E-A7C79E1C31F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralis.API", "Centralis.API\Centralis.API.csproj", "{7A9294BB-2E52-4B2E-8A4E-A7C79E1C31F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.Core", "Centralis.Core\Centralis.Core.csproj", "{C0113FCB-650C-40C9-B1D5-0B8EDA8D6264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralis.Core", "Centralis.Core\Centralis.Core.csproj", "{C0113FCB-650C-40C9-B1D5-0B8EDA8D6264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.Data", "Centralis.Data\Centralis.Data.csproj", "{31E3E01E-ADB2-46FA-A102-227B6C044F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralis.Data", "Centralis.Data\Centralis.Data.csproj", "{31E3E01E-ADB2-46FA-A102-227B6C044F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.Tests", "Centralis.Tests\Centralis.Tests.csproj", "{B354E23D-399D-45E1-928A-6DD56878ECEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralis.Tests", "Centralis.Tests\Centralis.Tests.csproj", "{B354E23D-399D-45E1-928A-6DD56878ECEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.Processor", "Centralis.Processor\Centralis.Processor.csproj", "{7A3D2902-6F2E-4B8C-A82E-837E87EC4330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralis.Processor", "Centralis.Processor\Centralis.Processor.csproj", "{7A3D2902-6F2E-4B8C-A82E-837E87EC4330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralis.App", "Centralis.App\Centralis.App.csproj", "{8E34ED32-27CF-4AB4-9655-AF5A02B6D7AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7A3D2902-6F2E-4B8C-A82E-837E87EC4330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A3D2902-6F2E-4B8C-A82E-837E87EC4330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A3D2902-6F2E-4B8C-A82E-837E87EC4330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E34ED32-27CF-4AB4-9655-AF5A02B6D7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E34ED32-27CF-4AB4-9655-AF5A02B6D7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E34ED32-27CF-4AB4-9655-AF5A02B6D7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E34ED32-27CF-4AB4-9655-AF5A02B6D7AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

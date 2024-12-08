@@ -14,6 +14,20 @@ namespace Centralis.Core.Services
             _patientRepository = patientRepository;
         }
 
+        public async Task<PatientData?> GetPatient(long? patientId)
+        {
+            var record = await _patientRepository.GetPatientRecord(patientId);
+
+            if (record == null)
+            {
+                return null;
+            }
+
+            var patient = await MapPatientData(record);
+
+            return patient;
+        }
+
         public async Task<IEnumerable<PatientData>> GetPatients()
         {
             var patients = new List<PatientData>();
@@ -22,7 +36,7 @@ namespace Centralis.Core.Services
 
             foreach (var record in records)
             {
-                patients.Add(MapPatientData(record));
+                patients.Add(await MapPatientData(record));
             }
 
             return patients;
@@ -37,7 +51,7 @@ namespace Centralis.Core.Services
                 return new PatientData
                 {
                     MedicalNo = patient.Id,
-                    Names = new Identifier
+                    Identifiers = new Identifier
                     {
                         Title = patient.Title,
                         FirstName = patient.FirstName,
@@ -61,7 +75,6 @@ namespace Centralis.Core.Services
 
             return null;
         }
-
 
         private int CalculateAge(DateTime dob)
         {
