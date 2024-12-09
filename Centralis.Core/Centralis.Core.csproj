@@ -11,4 +11,9 @@
     <ProjectReference Include="..\Centralis.Processor\Centralis.Processor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Api\" />
+    <Folder Include="Services\App\" />
+  </ItemGroup>
+
 </Project>

@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Centralis.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Icon="Resources/Images/centralis.ico"
+        Height="500" Width="350"
+        FontFamily="Segoe UI"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu VerticalAlignment="Top" Background="AliceBlue" Height="22">
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="AboutMenu_Click" Background="AliceBlue">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/question.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Service Status" Click="ServiceStatusMenu_Click" Background="AliceBlue">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/status.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Contact Support" Click="SupportMenu_Click" Background="AliceBlue">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/support.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Exit">
+                <MenuItem Header="Restart" Click="RestartMenu_Click" Background="AliceBlue">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/restart.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Exit" Click="ExitMenu_Click" Background="AliceBlue">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/exit.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="Resources/Images/centralis.png" Width="100" Height="100"/>
+            <Label Content="Centralis" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 0, 10"/>
+            <Label Content="UserId" FontSize="15" FontWeight="Bold"/>
+            <TextBox Name="UserIdTextBox" Height="25" Width="200" Margin="0, 5"
+            FontSize="13"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            TextAlignment="Center"
+            PreviewTextInput="UserIdTextBox_PreviewTextInput"/>
+            <Label Content="PinCode" FontSize="15" FontWeight="Bold"/>
+            <TextBox Name="PinTextBox" Height="25" Width="200" MaxLength="5" Margin="0, 5, 0 20"
+            FontSize="13"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            TextAlignment="Center"
+            PreviewTextInput="PinTextBox_PreviewTextInput"/>
+            <Button Content="Contact Support" BorderThickness="0" Background="LightGray" Height="25" Width="200"/>
+            <Button Content="Login" BorderThickness="0" Background="LightGray" Height="25" Width="200" Margin="0, 15"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Version: 1.0.0" FontSize="12"/>
+        </StackPanel>
     </Grid>
 </Window>

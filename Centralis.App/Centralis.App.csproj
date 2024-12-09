@@ -8,4 +8,32 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\centralis.ico" />
+    <None Remove="Resources\centralis.png" />
+    <None Remove="Resources\Icons\exit.png" />
+    <None Remove="Resources\Icons\question.png" />
+    <None Remove="Resources\Icons\restart.png" />
+    <None Remove="Resources\Icons\status.png" />
+    <None Remove="Resources\Icons\support.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\exit.png" />
+    <Resource Include="Resources\Icons\restart.png" />
+    <Resource Include="Resources\Icons\status.png" />
+    <Resource Include="Resources\Icons\support.png" />
+    <Resource Include="Resources\Images\centralis.ico" />
+    <Resource Include="Resources\Images\centralis.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\question.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
