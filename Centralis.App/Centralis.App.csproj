@@ -23,7 +23,7 @@
     <Resource Include="Resources\Icons\restart.png" />
     <Resource Include="Resources\Icons\status.png" />
     <Resource Include="Resources\Icons\support.png" />
-    <Resource Include="Resources\Images\centralis.ico" />
+    <Resource Include="Resources\Icons\centralis.ico" />
     <Resource Include="Resources\Images\centralis.png" />
   </ItemGroup>
 
@@ -32,7 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Folder Include="Resources\Utilities\" />
+    <Folder Include="Resources\Styles\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
