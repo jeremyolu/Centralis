@@ -36,7 +36,7 @@ namespace Centralis.Data.Repositories
             {
                 Id = reader.BigInt("Id"),
                 Name = reader.String("Name"),
-                AddressLine1 = reader.String("Name"),
+                AddressLine1 = reader.String("AddressLine1"),
                 AddressLine2 = reader.String("AddressLine2"),
                 PostalCode = reader.String("PostalCode"),
                 City = reader.String("City"),
