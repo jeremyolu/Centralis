@@ -4,7 +4,6 @@ using Centralis.Data.Clients;
 using Centralis.Data.Interfaces;
 using Centralis.Data.Interfaces.Clients;
 using Centralis.Data.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Centralis.API
 {
@@ -20,12 +19,12 @@ namespace Centralis.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            string connString = configuration["ConnectionString"];
+            builder.Services.AddSingleton<IDbClient>(provider => new DbClient(configuration["ConnectionString"]));
 
-            builder.Services.AddSingleton<IDbClient>(provider => new DbClient(connString));
-
+            builder.Services.AddSingleton<IDataRepository, DataRepository>();
             builder.Services.AddSingleton<IPatientRepository, PatientRepository>();
 
+            builder.Services.AddSingleton<IDataService, DataService>();
             builder.Services.AddSingleton<IPatientService, PatientService>();
 
             var app = builder.Build();
@@ -38,9 +37,7 @@ namespace Centralis.API
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
-
             app.MapControllers();
-
             app.Run();
         }
     }

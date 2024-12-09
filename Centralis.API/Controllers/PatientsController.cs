@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Centralis.API.Controllers
 {
     [ApiController]
-    [Route("patients")]
+    [Route("api/patients")]
     public class PatientsController : ControllerBase
     {
         private readonly ILogger<PatientsController> _logger;
@@ -14,6 +14,13 @@ namespace Centralis.API.Controllers
         {
             _logger = logger;
             _patientService = patientService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var response = await _patientService.GetPatients();
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
@@ -26,13 +33,6 @@ namespace Centralis.API.Controllers
                 return NotFound(new { message = $"Patient with ID {id} not found.", errorCode = 404 });
             }
 
-            return Ok(response);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var response = await _patientService.GetPatients();
             return Ok(response);
         }
     }
